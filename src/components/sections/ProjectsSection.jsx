@@ -4,6 +4,7 @@ import { projects } from "../../data/projects"
 
 const ProjectsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentVariantIndex, setCurrentVariantIndex] = useState(0)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const handleNext = () => {
@@ -15,13 +16,21 @@ const ProjectsSection = () => {
 };
 
   const currentProject = projects[currentIndex]
-  const projectImages = currentProject.images?.length
-    ? currentProject.images
-    : currentProject.image
-      ? [currentProject.image]
-      : []
+  const projectVariants = currentProject.variants?.length ? currentProject.variants : []
+  const activeVariant = projectVariants[currentVariantIndex]
+
+  const projectImages = activeVariant?.images?.length
+    ? activeVariant.images
+    : currentProject.images?.length
+      ? currentProject.images
+      : currentProject.image
+        ? [currentProject.image]
+        : []
+
+  const projectDescription = activeVariant?.description || currentProject.description
 
   useEffect(() => {
+    setCurrentVariantIndex(0)
     setCurrentImageIndex(0)
   }, [currentIndex])
 
@@ -36,6 +45,11 @@ const ProjectsSection = () => {
 
     return () => clearInterval(intervalId)
   }, [projectImages.length])
+
+  const handleVariantChange = (variantIndex) => {
+    setCurrentVariantIndex(variantIndex)
+    setCurrentImageIndex(0)
+  }
 
   return (
     <SectionLayout
@@ -53,7 +67,23 @@ const ProjectsSection = () => {
 
         <div className="project-content">
           <h3 className="project-title">{currentProject.title}</h3>
-          <p className="project-description">{currentProject.description}</p>
+
+          {projectVariants.length > 1 && (
+            <div className="project-variants" aria-label="Project versions">
+              {projectVariants.map((variant, variantIndex) => (
+                <button
+                  key={`${currentProject.id}-${variant.type}`}
+                  type="button"
+                  className={`project-variant-btn ${variantIndex === currentVariantIndex ? "project-variant-btn--active" : ""}`}
+                  onClick={() => handleVariantChange(variantIndex)}
+                >
+                  {variant.type}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <p className="project-description">{projectDescription}</p>
         </div>
 
         <button onClick={handleNext} className="next-btn" aria-label="Next project">

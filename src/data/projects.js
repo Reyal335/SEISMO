@@ -1,8 +1,9 @@
 import QQImg from "../assets/QQ-logo.png";
 import qq1 from "../assets/Student presentation.JPG";
 import qq2 from "../assets/GROUPPHOTO.jpg";
+import singleAxisImg from "../assets/SingleAxisST.png";
+import twoAxisImg from "../assets/2AxisST.png";
 import CSSNImg from "../assets/CSSN.png";
-import shakeTableImg from "../assets/SHAKETABLE.jpg";
 
 export const projects = [
   {
@@ -20,10 +21,21 @@ export const projects = [
     images: [CSSNImg],
   },
   {
-    id: 3,
-    title: "Shake Table",
-    description: "A small-scale seismic simulator that reproduces recorded earthquake data for structural testing and earthquake response analysis.",
-    images: [shakeTableImg],
-  },
+  id: 3,
+  title: "Shake Table",
+  description: "A small-scale seismic simulator...",
+  variants: [
+    {
+      type: "Single Axis",
+      description: "This small-scale shake table is a single-axis, horizontally actuated platform that reproduces actual recorded seismic data by translating it into precise mechanical motion. It features a belt-driven mechanism powered by a DC servo motor, and is microcontroller-controlled for accurate playback of earthquake ground motion used to demonstrate the effects of ground shaking on structures, supporting earthquake education, structural awareness, and risk-informed decision-making.",
+      images: [singleAxisImg],
+    },
+    {
+      type: "Two Axis",
+      description: "This 2-axis shake table provides horizontal motion in both the X and Y directions, enabling multidirectional ground-motion simulation. It uses a lead-screw drive system powered by DC servo motors for precise and repeatable movement. The platform is microcontroller-based and capable of reproducing actual recorded seismic data from the Citizen Science Seismic Network, translating earthquake recordings into accurate mechanical motion used to demonstrate the effects of ground shaking on structures, supporting earthquake education, structural awareness, and risk-informed decision-making.",
+      images: [twoAxisImg],
+    }
+  ]
+}
 ];
 
