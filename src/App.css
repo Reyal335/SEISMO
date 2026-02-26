@@ -727,6 +727,80 @@ h6 {
   font-size: clamp(1.2rem, 1.7vw, 1.8rem);
 }
 
+#come-work-with-us {
+  background: #dcdcdc;
+  color: #000000;
+}
+
+#come-work-with-us .content-section__inner {
+  width: min(1180px, 100%);
+}
+
+.careers {
+  padding: clamp(0.75rem, 1.2vw, 1.5rem) 0 clamp(1.2rem, 2.4vw, 2.5rem);
+}
+
+.careers__header {
+  text-align: center;
+}
+
+.careers__title {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  line-height: 1.05;
+  font-weight: 500;
+}
+
+.careers__subtitle {
+  margin: clamp(0.6rem, 1.2vw, 0.9rem) 0 0;
+  color: #737373;
+  font-size: clamp(1.25rem, 2.4vw, 3rem);
+  font-weight: 400;
+}
+
+.careers__grid {
+  margin-top: clamp(2rem, 4vw, 3.6rem);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.career-card {
+  background: transparent;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.18);
+}
+
+.career-card__image {
+  height: clamp(180px, 21vw, 300px);
+  background: #cbcbcb;
+  display: grid;
+  place-items: center;
+  color: #111111;
+  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+  text-align: center;
+  padding: 1rem;
+}
+
+.career-card__body {
+  background: #01953c;
+  color: #f5fff8;
+  min-height: clamp(260px, 23vw, 360px);
+  padding: clamp(1.2rem, 2vw, 1.8rem) clamp(1.1rem, 1.8vw, 1.6rem);
+}
+
+.career-card__body h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-weight: 500;
+}
+
+.career-card__body p {
+  margin: clamp(1rem, 1.7vw, 1.4rem) 0 0;
+  max-width: 26ch;
+  font-size: clamp(1.1rem, 1.5vw, 1.85rem);
+  line-height: 1.25;
+}
+
 .footer {
   background: #3f3f3f;
 }
@@ -940,6 +1014,14 @@ h6 {
   .team__member:nth-child(4),
   .team__member:nth-child(5) {
     grid-column: span 1;
+  }
+
+  .careers__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-card__body p {
+    max-width: 100%;
   }
   .products-panel {
     border-radius: 38px 38px 0 0;
