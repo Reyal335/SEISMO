@@ -7,6 +7,9 @@ import stationDataImage from "../../assets/stationdata.png"
 const StationViewSection = () => {
   const [selected, setSelected] = useState(null)
 
+  // Centralized copy for each interactive hotspot.
+  // Keep keys aligned with `setSelected("<key>")` calls and CSS modifiers:
+  // `.station-view__beacon--<key>` and `.station-view__popover--<key>`.
   const descriptions = {
     events:
       "Clicking the events beacon will show recent earthquake activity pulled directly from the live network.",
@@ -49,7 +52,7 @@ const StationViewSection = () => {
               alt="UPRI Earthquake Hub map interface"
               className="station-view__main-shot"
             />
-            {/* interactive beacons */}
+            {/* Interactive beacons mapped to fixed coordinates in App.css. */}
             <button
               type="button"
               className="station-view__beacon station-view__beacon--events"
@@ -87,6 +90,7 @@ const StationViewSection = () => {
               }}
             />
 
+            {/* Popover uses a selected-key modifier class for per-beacon positioning. */}
             {selected && (
               <div className={`station-view__popover station-view__popover--${selected}`}>
                 <button
@@ -98,6 +102,7 @@ const StationViewSection = () => {
                   ×
                 </button>
                 <p>{descriptions[selected]}</p>
+                {/* Map hotspot shows an additional station waveform image. */}
                 {selected === "map" && (
                   <img
                     src={stationDataImage}
