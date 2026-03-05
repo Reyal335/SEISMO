@@ -17,6 +17,7 @@ const PageContent = () => {
       <WhatWeAreSection />
       <TeamSection />
       <ComeWorkWithUsSection />
+      <PublicationsSection />
     </main>
   )
 }
