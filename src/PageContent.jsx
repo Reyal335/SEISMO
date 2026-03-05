@@ -10,11 +10,11 @@ import WhatWeAreSection from "./components/sections/WhatWeAreSection"
 const PageContent = () => {
   return (
     <main className="page-content">
-      <WhatWeAreSection />
       <StationViewSection />
-      <ProjectsSection />
       <ProductsSection />
+      <ProjectsSection />
       <CommunitySection />
+      <WhatWeAreSection />
       <TeamSection />
       <ComeWorkWithUsSection />
       <PublicationsSection />
