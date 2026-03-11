@@ -74,7 +74,7 @@ const Hero = () => {
 
       <div className="hero__body">
         <div className="hero__logo-col">
-          <img src={seismoLogo} alt="Seismo" className="hero__brand-logo" />
+          <img src={seismologo2} alt="Seismo" className="hero__brand-logo" />
         </div>
         <div className="hero__caption">
           <h1>

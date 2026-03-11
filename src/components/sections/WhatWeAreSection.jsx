@@ -113,9 +113,7 @@ const WhatWeAreSection = () => {
         >
           <h3 className="what-we-are__card-title">What We Do</h3>
           <p>
-            The SEISMO Team of the UP Resilience Institute (UPRI) is a small
-            yet dynamic group dedicated to advancing disaster resilience in the
-            Philippines through innovative seismic engineering solutions.
+              Our team integrates technical expertise in electronics, software engineering, and structural dynamics to develop low-cost, high-impact systems for earthquake monitoring and simulation.
           </p>
         </div>
 
@@ -128,9 +126,7 @@ const WhatWeAreSection = () => {
         >
           <h3 className="what-we-are__card-title">Initiative</h3>
           <p>
-            The SEISMO Team of the UP Resilience Institute (UPRI) is a small
-            yet dynamic group dedicated to advancing disaster resilience in the
-            Philippines through innovative seismic engineering solutions.
+              We lead the Citizen Science Seismic Network, empowering communities and schools to participate in real-time seismic data collection and awareness
           </p>
         </div>
       </div>
